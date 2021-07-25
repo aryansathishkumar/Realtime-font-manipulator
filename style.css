@@ -5,7 +5,7 @@ body
 .header
 {
     width: fit-content;
-    font-size: x-large;
+    font-size: large;
     height: fit-content;
     font-variant-caps: titling-caps;
 }
@@ -18,7 +18,7 @@ body
 {
     width: 75%;
     height: fit-content;
-    font-size: x-large;
+    font-size: large;
 }
 #footer
 {
