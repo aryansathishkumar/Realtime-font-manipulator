@@ -15,10 +15,11 @@ noseX = "";
 noseY = "";
 
 function setup() {
-    canvas = createCanvas(900, 300);
+    canvas = createCanvas(800, 400);
     video = createCapture(VIDEO);
+    video.size(400, 480);
+    video.position(125, 255);
     canvas.center();
-    video.hide();
 
     posenet = ml5.poseNet(video, modelloaded)
     posenet.on("pose", getpose)
@@ -54,27 +55,25 @@ function fix()
 function draw() {
     if(varRight > varLeft) 
     {
-        image(video, 0, 0, 400, 300);
         fill("yellow");
         textSize(total_right)
-        text(text_wrote, noseX + 400, noseY);
+        text(text_wrote, noseX, noseY);
         setTimeout(function()
         {
             fill("white")
-            rect(401, 0, 500, 300);
+            rect(0, 0, 800, 400);
             document.getElementById("height").innerHTML = total_right
         }, "700")
     }
     else if(varLeft > varRight)
     {
-        image(video, 0, 0, 400, 300);
         fill("yellow");
         textSize(total_left);
-        text(text_wrote, noseX + 400, noseY);
+        text(text_wrote, noseX, noseY);
         setTimeout(function()
         {
             fill("white")
-            rect(401, 0, 500, 300)
+            rect(0, 0, 800, 400)
             document.getElementById("height").innerHTML = total_left
         }, "700")
     }

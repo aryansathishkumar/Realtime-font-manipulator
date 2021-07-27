@@ -42,6 +42,8 @@ canvas
     background-color: white;
     margin-top: 9%;
     border: 10px solid black;
+    border-radius: 20px;
+    margin-left: 13%;
 }
 .button
 {
