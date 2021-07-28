@@ -15,10 +15,9 @@ noseX = "";
 noseY = "";
 
 function setup() {
-    canvas = createCanvas(800, 400);
+    canvas = createCanvas(600, 300);
     video = createCapture(VIDEO);
-    video.size(400, 480);
-    video.position(125, 255);
+    video.size(400, 410);
     canvas.center();
 
     posenet = ml5.poseNet(video, modelloaded)
@@ -61,7 +60,7 @@ function draw() {
         setTimeout(function()
         {
             fill("white")
-            rect(0, 0, 800, 400);
+            rect(0, 0, 600, 300);
             document.getElementById("height").innerHTML = total_right
         }, "700")
     }
@@ -73,7 +72,7 @@ function draw() {
         setTimeout(function()
         {
             fill("white")
-            rect(0, 0, 800, 400)
+            rect(0, 0, 600, 300)
             document.getElementById("height").innerHTML = total_left
         }, "700")
     }
