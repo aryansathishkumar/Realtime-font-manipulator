@@ -2,10 +2,10 @@ function preload() {
 
 }
 
-leftAnkleX = "";
-rightAnkleX = "";
-leftAnkleY = "";
-rightAnkleY = "";
+leftWristX = "";
+rightWristX = "";
+leftWristY = "";
+rightWristY = "";
 text_wrote = "";
 varRight= "";
 varLeft = "";
@@ -31,20 +31,20 @@ function modelloaded() {
 function getpose(results) {
     console.log(results);
 
-    leftAnkleX = results[0].pose.leftAnkle.x;
-    leftAnkleY = results[0].pose.leftAnkle.y;
+    leftWristX = results[0].pose.leftWrist.x;
+    leftWristY = results[0].pose.leftWrist.y;
 
-    rightAnkleX = results[0].pose.rightAnkle.x;
-    rightAnkleY = results[0].pose.rightAnkle.y;
+    rightWristX = results[0].pose.rightWrist.x;
+    rightWristY = results[0].pose.rightWrist.y;
 
-    varRight = rightAnkleX + rightAnkleY;
-    varLeft = leftAnkleY + leftAnkleX;
+    varRight = rightWristX + rightWristY;
+    varLeft = leftWristY + leftWristX;
 
     noseX = results[0].pose.nose.x;
     noseY = results[0].pose.nose.y;
 
-    total_right = Math.floor((varRight - varLeft) / 3);
-    total_left = Math.floor((varLeft - varRight) / 3);
+    total_right = Math.abs(Math.floor((varRight - varLeft)/2));
+    total_left = Math.abs(Math.floor((varLeft - varRight)/2));
 
 }
 function fix()
